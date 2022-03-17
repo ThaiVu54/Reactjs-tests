@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reacjs</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>thử nghiệm</h1>
+    <div id="root"></div>
+    <hr>
+    <!-- <script type="text/babel">
+        console.log(React.version);
+        const h1React = React.createElement('h1',{
+            title: 'Helle',
+            className: 'heading'
+        }, 'hello moi nguoi')
+        console.log(h1React)
+
+        //DOM element
+        const ulDOM = document.createElement('ul');
+        const liDOM1 = document.createElement('li');
+        liDOM1.innerText = 'thai'
+
+        const liDOM2 = document.createElement('li');
+        liDOM2.innerText = 'vu'
+
+        ulDOM.appendChild(liDOM1)
+        ulDOM.appendChild(liDOM2)
+        document.body.appendChild(ulDOM);
+
+        //react
+        const ulReact = React.createElement('ul', null, 
+        React.createElement('li', null, 'THAI'),
+        React.createElement('li', null, 'THUY')
+        );
+        console.log(ulReact);
+
+        const divReact = React.createElement('div', { className: 'post-item'},
+        React.createElement('h2',{title: 'hoc react tu do'}, 'tu hoc react'),
+        React.createElement('p', {}, 'tu basic toi advanced')
+        );
+        console.log(divReact)
+
+        // get root element
+
+        const root = document.getElementById('root');
+        ReactDOM.render(divReact, root);
+        console.log(root)
+        const hReact = React.createElement('h1',{title:'hello', className: 'heading'}, 'hello anh thai handsome')
+        console.log(root1)
+        ReactDOM.render(hReact, document.getElementById('root1'));  -->
+
+    <script type="text/babel">
+        // class component
+        class PostItem extends React.Component{
+            render(){
+                return (
+                <div className='post-list'>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/upload-file-1-5c40f.appspot.com/o/pq8q1l4rrth?alt=media&token=63fd564c-4e14-4cb3-9c12-fdd69cabea7f" alt="ny"/>
+                    
+                    <h2 className='post-title'>ThaiVu ok ma</h2>
+                    <p className='post-description'>chac khong</p>
+                </div>
+            );
+            }
+        
+        }
+
+        // function component
+        function PostItem2() {
+            return (
+                <div className='post-list'>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/upload-file-1-5c40f.appspot.com/o/20220115_231405.jpg?alt=media&token=424e36e7-a80e-4c61-b241-d03e5f6a52aa" alt="ny"/>
+                    
+                    <h2 className='post-title'>ThaiVu ok ma</h2>
+                    <p className='post-description'>chac khong</p>
+                </div>
+            )
+        }
+
+        const app = (
+            <React.Fragment>
+                <PostItem/>
+                <PostItem2/>
+            </React.Fragment>
+            
+        );
+        console.log(app)
+        ReactDOM.render(app, document.getElementById('root'))
+    </script>
+</body>
+
+</html>
